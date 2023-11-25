@@ -16,7 +16,13 @@ app.use(express.json());
 
 // Use user routes
 app.use('/api/user', userRoutes);
+app.get('/', (req, res) => {
 
+    const message = '<h1>Hello, World!</h1>';
+
+    // Send the message as a response
+    res.send(message);
+});
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/reset_password', {  useNewUrlParser: true,  useUnifiedTopology: true})
